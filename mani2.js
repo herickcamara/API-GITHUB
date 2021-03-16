@@ -5,12 +5,12 @@ const button = document.querySelector('.bnt')
 
  
  button.onclick = function(){
-    const nome = input.value.replace(/\s/g, '');
-    console.log(nome)
+    const Nome = input.value.replace(/\s/g, '');
+    console.log(Nome)
     
-  axios.get(`http://api.github.com/users/${nome}?tab=repositories`)
-    .then(function(response){
-        user = response;
+  axios.get(`http://api.github.com/users/${Nome}?tab=repositories`)
+    .then(req => {
+        user = req;
         console.log(user)
         
         getUserGitHub()
